@@ -42,10 +42,11 @@ make.down <- function(mdel, varb){
     
     dwn <- map(.x = 1:nlyr(rst), .f = function(j){
       
+      cat('Day :', j, '\n')
       rs <- rst[[j]]
       dw <- raster.downscale(srtm, rs, se = FALSE, p = 0.90)
       dw <- dw$downscale
-      plot(dw)
+      return(dw)
       
     })
 
