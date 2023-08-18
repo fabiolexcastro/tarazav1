@@ -5,7 +5,7 @@
 
 ### Load libraries ----------------------------------------------------------
 require(pacman)
-pacman::p_load(terra, rgdal, sf, fs, tidyverse, rgeos, gtools, stringr, glue, elevatr)
+pacman::p_load(terra, rgdal, spatialEco, sf, fs, tidyverse, rgeos, gtools, stringr, glue, elevatr)
 
 g <- gc(reset = T)
 rm(list = ls())
@@ -35,6 +35,13 @@ make.down <- function(mdel, varb){
   
   head(fles, 2)
   
+  rstr <- map(.x = 1:length(fles), .f = function(i){
+    
+    fle <- fles[i]
+    rst <- rast(fle)
+    dwn <- raster.downscale(srtm, rstr)
+    
+  })
   
   
   
