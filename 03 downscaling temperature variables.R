@@ -44,7 +44,8 @@ make.down <- function(mdel, varb){
       
       rs <- rst[[j]]
       dw <- raster.downscale(srtm, rs, se = FALSE, p = 0.90)
-      dw
+      dw <- dw$downscale
+      plot(dw)
       
     })
 
