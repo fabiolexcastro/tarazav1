@@ -39,7 +39,15 @@ make.down <- function(mdel, varb){
     
     fle <- fles[i]
     rst <- rast(fle)
-    dwn <- raster.downscale(srtm, rstr)
+    
+    dwn <- map(.x = 1:nlyr(rst), .f = function(j){
+      
+      rs <- rst[[j]]
+      dw <- raster.downscale(srtm, rs, se = FALSE, p = 0.90)
+      dw
+      
+    })
+
     
   })
   
