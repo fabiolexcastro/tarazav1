@@ -46,16 +46,15 @@ make.down <- function(mdel, varb){
       rs <- rst[[j]]
       dw <- raster.downscale(srtm, rs, se = FALSE, p = 0.90)
       dw <- dw$downscale
-      return(dw)
+      yr <- basename(fle) %>% str_split(., '_') %>% map_chr(8) %>% gsub('.nc$', '', .)
+      ou <- glue('{unique(dirname(fles))}/{yr}')
+      dir_create(ou)
+      terra::writeRaster(x = dw, filename = glue('{ou}/{varb}_{j}.tif'), overwrite = TRUE)
+      rm(rs, dw, yr, ou)
+      gc(reset = TRUE)
       
     })
-    
-    dwn <- reduce(dwn)
-    out <- unique(dirname(fles))
-    nme <- glue('down_{basename(fle)}')
-    terra::writeRaster(x = dwn, filanem = glue('{out}/{nme}'), overwrite = TRUE)
-    cat('Done!\n')
-                
+   
   })
   
   
