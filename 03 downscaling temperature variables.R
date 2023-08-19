@@ -49,8 +49,13 @@ make.down <- function(mdel, varb){
       return(dw)
       
     })
-
     
+    dwn <- reduce(dwn)
+    out <- unique(dirname(fles))
+    nme <- glue('down_{basename(fle)}')
+    terra::writeRaster(x = dwn, filanem = glue('{out}/{nme}'), overwrite = TRUE)
+    cat('Done!\n')
+                
   })
   
   
