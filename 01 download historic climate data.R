@@ -87,5 +87,10 @@ map(.x = 1:length(vars), .f = function(v){
   down.hist(var = vars[v], gcm = 'INM-CM4-8', ab1 = 'r1i1p1f1', ab2 = 'gr1')
 })
 
+### BCC-CSM2-MR
+map(.x = 1:length(vars), .f = function(v){
+  down.hist(var = vars[v], gcm = 'BCC-CSM2-MR', ab1 = 'r1i1p1f1', ab2 = 'gn')
+})
+
 
 
