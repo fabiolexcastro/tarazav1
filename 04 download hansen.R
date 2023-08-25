@@ -18,10 +18,11 @@ plot(zone)
 # Calc tiles --------------------------------------------------------------
 tles <- calc_gfc_tiles(aoi = st_as_sf(zone))
 plot(tles)
+dout <- './tif/hansen/raw'
+dir_create(dout)
 
-
-
-#
+# To download -------------------------------------------------------------
+hnsn <- gfcanalysis::download_tiles(tiles = tles, output_folder = dout)
 
 
 
