@@ -65,8 +65,7 @@ make.down <- function(mdel, varb){
 
 
 
-
-
+###
 
 
 
