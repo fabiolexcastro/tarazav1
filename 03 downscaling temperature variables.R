@@ -73,6 +73,12 @@ map(.x = 1:2, .f = function(v){
   make.down(mdel = mdls[2], varb = vrss[v])
 })
 
+# Model 3
+map(.x = 1:2, .f = function(v){
+  make.down(mdel = mdls[3], varb = vrss[v])
+})
+
+
 # Repetir con los modelos 3, 4 y 5 una vez que ya hayan sido descargados
 
 
