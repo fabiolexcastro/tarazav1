@@ -15,9 +15,9 @@ options(scipen = 999, warn = -1)
 zone <- terra::vect('gpkg/zone-mpios.gpkg')
 plot(zone)
 
-
-
-
+# Calc tiles --------------------------------------------------------------
+tles <- calc_gfc_tiles(aoi = st_as_sf(zone))
+plot(tles)
 
 
 
