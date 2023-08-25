@@ -80,3 +80,12 @@ map(.x = 3:length(vars), .f = function(v){
 map(.x = 1:length(vars), .f = function(v){
   down.hist(var = vars[v], gcm = 'CanESM5', ab1 = 'r1i1p1f1', ab2 = 'gn')
 })
+
+
+### INM-CM4-8
+map(.x = 1:length(vars), .f = function(v){
+  down.hist(var = vars[v], gcm = 'INM-CM4-8', ab1 = 'r1i1p1f1', ab2 = 'gr1')
+})
+
+
+
