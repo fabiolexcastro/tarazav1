@@ -5,7 +5,7 @@
 
 ### Load libraries ----------------------------------------------------------
 require(pacman)
-pacman::p_load(terra, rgdal, sf, fs, tidyverse, rgeos, gtools, stringr, glue, elevatr)
+pacman::p_load(terra, gfcanalysis, rgdal, sf, fs, tidyverse, rgeos, gtools, stringr, glue, elevatr)
 
 g <- gc(reset = T)
 rm(list = ls())
@@ -21,7 +21,7 @@ plot(zone)
 
 
 
-
+#
 
 
 
