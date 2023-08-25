@@ -22,8 +22,8 @@ mdls <- dir_ls(path) %>% basename()
 ### Function to use ---------------------------------------------------------
 make.down <- function(mdel, varb){
   
-  mdel <- mdls[1]
-  varb <- 'tasmin'
+  # mdel <- mdls[1]
+  # varb <- 'tasmin'
   
   cat('To process: ', mdel, ' ', varb, '\n')
   fles <- glue('{path}/{mdel}') %>% 
@@ -57,15 +57,30 @@ make.down <- function(mdel, varb){
    
   })
   
-  
-  
-  
-  
 }
 
+# To apply the function ---------------------------------------------------
+
+vrss <- c('tasmin', 'tasmax')
+
+# Model 1
+map(.x = 1:2, .f = function(v){
+  make.down(mdel = mdls[1], varb = vrss[v])
+})
+
+# Model 2
+map(.x = 1:2, .f = function(v){
+  make.down(mdel = mdls[2], varb = vrss[v])
+})
+
+# Repetir con los modelos 3, 4 y 5 una vez que ya hayan sido descargados
 
 
-###
+# To check the results  ---------------------------------------------------
+
+
+
+
 
 
 
