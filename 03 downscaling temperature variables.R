@@ -12,7 +12,7 @@ rm(list = ls())
 options(scipen = 999, warn = -1)
 
 ### Load data ---------------------------------------------------------------
-zone <- terra::vect('./gpkg/zone-mpios.gpkg')
+zone <- terra::vect('./gpkg/zone.gpkg')
 srtm <- terra::rast('./tif/srtm/srtm_z9_fill.tif')
 
 # List the files 
