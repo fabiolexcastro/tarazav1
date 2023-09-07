@@ -40,7 +40,7 @@ down.hist <- function(var, gcm, ab1, ab2){
   
   # Start 
   cat('To process: ', var, ' ', gcm, '\n')
-  urlw <- as.character(glue('{root}/{gcm}/historical/{ab1}/{var}/{var}_day_{gcm}_historical_{ab1}_{ab2}_{1978:2014}.nc'))
+  urlw <- as.character(glue('{root}/{gcm}/historical/{ab1}/{var}/{var}_day_{gcm}_historical_{ab1}_{ab2}_{c(1989, 2009, 2010)}.nc'))
   dirs <- as.character(glue('tif/nasa/cmip6/historical/{gcm}/{var}/{basename(urlw)}'))
   dout <- unique(dirname(dirs))
   ifelse(!file.exists(dout), dir_create(dout), print('Directorio existe'))
