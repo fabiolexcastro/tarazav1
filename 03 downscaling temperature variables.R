@@ -35,6 +35,8 @@ make.down <- function(mdel, varb){
   
   head(fles, 2)
   
+  srtm <- terra::crop(srtm, c(-76, -75.2, 7.22, 7.7))
+  
   rstr <- map(.x = 1:length(fles), .f = function(i){
     
     fle <- fles[i]
