@@ -39,6 +39,8 @@ make.down <- function(mdel, varb){
     
     fle <- fles[i]
     rst <- rast(fle)
+    rst <- terra::crop(rst, c(-76, -75.2, 7.22, 7.7))
+    plot(rst[[1]])
     
     dwn <- map(.x = 1:nlyr(rst), .f = function(j){
       
