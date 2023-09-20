@@ -28,15 +28,18 @@ srtm.tble <- srtm %>%
   setNames(c('x', 'y', 'value'))
 
 g.srtm <- ggplot() + 
-  geom_tile(data = srtm.tble, aes(x = x, y = y, fill = value)) + 
+  geom_tile(data = srtm.tble, aes(x = x, y = y, fill = value), alpha = 0.5) + 
   scale_fill_gradientn(colors = terrain.colors(10)) +
   geom_sf(data = st_as_sf(bsin), fill = NA, col = 'grey60') + 
-  coord_sf() + 
+  coord_sf(xlim = c(-75.9, -75.37), ylim = c(7.26, 7.62)) +
+  ggtitle(label = 'Altitud para la cuenca de interés', subtitle = 'Resolución apróximada 20 mt') +
   theme_ipsum_es() + 
+  labs(fill = 'Modelo Digital de Elevación (mm)', x = 'Lon', y = 'Lat') +
   theme(legend.position = 'bottom', 
-        axis.text.y = element_text(hjust = 0.5, angle = 90),
-        axis.text.x = element_text(hjust = 0.5), 
+        axis.text.y = element_text(hjust = 0.5, size = 5, angle = 90),
+        axis.text.x = element_text(hjust = 0.5, size = 5), 
         axis.title = element_text(face = 'bold'),
+        plot.subtitle = element_text(hjust = 0.5, face = 'bold'), 
         legend.key.width = unit(3, 'line'),
         text = element_text(family = 'Barlow'), 
         plot.title = element_text(face = 'bold', hjust = 0.5), 
@@ -58,5 +61,5 @@ g.srtm <- ggplot() +
                          pad_x = unit(0.1, "in"), pad_y = unit(0.2, "in"), 
                          style = north_arrow_fancy_orienteering(text_family = 'Barlow', text_col = 'grey40', line_col = 'grey60', fill = c('grey60', 'grey99'))) 
 
-ggsave(plot = g.srtm, filename = './png/srtm_map.png', units = 'in', width = 9, height = 5, dpi = 300)
+ggsave(plot = g.srtm, filename = './png/srtm_map.png', units = 'in', width = 12, height = 7, dpi = 300)
 
