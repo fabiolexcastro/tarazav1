@@ -10,7 +10,7 @@ options(scipen = 999, warn = -1)
 # Load data ---------------------------------------------------------------
 srtm <- rast('./tif/srtm/srtm_z9_fill.tif')
 bsin <- vect('./gpkg/zone.gpkg')
-rraw <- rast('./tif/nasa/cmip6/historical/ACCESS-CM2/tasmax/zone_tasmax_day_ACCESS-CM2_historical_r1i1p1f1_gn_1978.nc')
+rraw <- rast('./tif/nasa/cmip6/historical/ACCESS-CM2/tasmax/zone_tasmax_day_ACCESS-CM2_historical_r1i1p1f1_gn_1979.nc')
 
 # Extract by mask  --------------------------------------------------------
 srtm <- srtm %>% terra::crop(., c(-76, -75.2, 7.22, 7.7)) 
@@ -18,6 +18,8 @@ srtm <- srtm %>% terra::crop(., c(-76, -75.2, 7.22, 7.7))
 # Conversion to Celcius ---------------------------------------------------
 rraw <- rraw[[1]]
 rraw <- rraw - 273.15
+
+plot(rraw[[1]])
 
 # SRTM map  ---------------------------------------------------------------
 srtm.tble <- srtm %>% 
