@@ -29,7 +29,8 @@ make.extract <- function(vr, yr){
     f <- fles[1] # Correr y borrar 
     cat('Basename: ', basename(f), '\n')
     r <- rast(f)
-    r
+    z <- terra::crop(r, bsin)
+    z <- terra::mask(r, bsin)
     
   })
   
