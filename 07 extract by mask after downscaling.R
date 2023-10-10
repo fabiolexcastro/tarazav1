@@ -48,6 +48,11 @@ map(.x = 1:length(year), .f = function(i){
   make.extract(vr = 'tasmax', yr = year[i])
 })
 
+# Tasmin 
+year <- 1980:2014
+map(.x = 1:length(year), .f = function(i){
+  make.extract(vr = 'tasmin', yr = year[i])
+})
 
 
 
