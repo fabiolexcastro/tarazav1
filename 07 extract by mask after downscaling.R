@@ -21,7 +21,7 @@ make.extract <- function(vr, yr){
   yr <- 1979
   
   cat('... Processing: ', yr, '\n')
-  fles <- dir_ls(path, regexp = vr) %>% dir_ls(.) %>% as.character()
+  fles <- dir_ls(path, regexp = vr) %>% dir_ls(., type = 'directory') %>% as.character()
   
   
   
