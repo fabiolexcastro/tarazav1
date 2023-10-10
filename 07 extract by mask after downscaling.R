@@ -33,6 +33,10 @@ make.extract <- function(vr, yr){
     z <- terra::mask(z, bsin)
     o <- paste0(dirname(f), '/', 'bsin_', basename(f))
     terra::writeRaster(x = z, filename = o, overwrite = TRUE)
+    rm(r, z)
+    gc(reset = T)
+    file.remove(f)
+    
   })
   
   
