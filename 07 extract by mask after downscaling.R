@@ -23,7 +23,7 @@ make.extract <- function(vr, yr){
   cat('... Processing: ', yr, '\n')
   fles <- dir_ls(path, regexp = vr) %>% dir_ls(., type = 'directory') %>% as.character()
   fles <- grep(yr, fles, value = T) %>% dir_ls() %>% as.character()
-  
+  fles <- fles %>% mixedsort()
   
   
   
