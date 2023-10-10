@@ -32,7 +32,7 @@ make.extract <- function(vr, yr){
     z <- terra::crop(r, bsin)
     z <- terra::mask(z, bsin)
     o <- paste0(dirname(f), '/', 'bsin_', basename(f))
-    
+    terra::writeRaster(x = z, filename = o, overwrite = TRUE)
   })
   
   
