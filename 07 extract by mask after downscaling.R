@@ -25,6 +25,7 @@ make.extract <- function(vr, yr){
   fles <- grep(yr, fles, value = T) %>% dir_ls() %>% as.character()
   fles <- fles %>% mixedsort()
   fles <- grep('.tif$', fles, value = T)
+  fles <- grep(paste0('/', vr), fles, value = T)
   
   map(.x = fles[2:length(fles)], .f = function(f){
     cat('Basename: ', basename(f), '\n')
