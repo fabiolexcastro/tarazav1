@@ -36,7 +36,6 @@ make.extract <- function(vr, yr){
     rm(r, z)
     gc(reset = T)
     file.remove(f)
-    
   })
   
   
