@@ -25,6 +25,13 @@ make.extract <- function(vr, yr){
   fles <- grep(yr, fles, value = T) %>% dir_ls() %>% as.character()
   fles <- fles %>% mixedsort()
   
+  map(.x = fles, .f = function(f){
+    f <- fles[1] # Correr y borrar 
+    cat('Basename: ', basename(f), '\n')
+    r <- rast(f)
+    r
+    
+  })
   
   
 }
