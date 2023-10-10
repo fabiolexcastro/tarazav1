@@ -25,8 +25,7 @@ make.extract <- function(vr, yr){
   fles <- grep(yr, fles, value = T) %>% dir_ls() %>% as.character()
   fles <- fles %>% mixedsort()
   
-  map(.x = fles, .f = function(f){
-    f <- fles[1] # Correr y borrar 
+  map(.x = fles[2:length(fles)], .f = function(f){
     cat('Basename: ', basename(f), '\n')
     r <- rast(f)
     z <- terra::crop(r, bsin)
@@ -37,6 +36,8 @@ make.extract <- function(vr, yr){
     gc(reset = T)
     file.remove(f)
   })
+  
+  
   
   
 }
