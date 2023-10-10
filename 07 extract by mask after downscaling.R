@@ -1,7 +1,7 @@
 
 # Load libraries ----------------------------------------------------------
 require(pacman)
-pacman::p_load(terra, hrbrthemes, ggspatial, sf, tidyverse, gtools, stringr, glue)
+pacman::p_load(terra, hrbrthemes, ggspatial, sf, fs, tidyverse, gtools, stringr, glue)
 
 g <- gc(reset = TRUE)
 rm(list = ls())
