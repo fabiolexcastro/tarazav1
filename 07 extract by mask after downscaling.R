@@ -30,7 +30,7 @@ make.extract <- function(vr, yr){
     cat('Basename: ', basename(f), '\n')
     r <- rast(f)
     z <- terra::crop(r, bsin)
-    z <- terra::mask(r, bsin)
+    z <- terra::mask(z, bsin)
     
   })
   
