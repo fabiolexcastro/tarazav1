@@ -44,6 +44,7 @@ make.extract <- function(vr, yr){
 # Extract by mask  --------------------------------------------------------#
 
 # Tasmax
+year <- 1979:2014
 map(.x = 1:length(year), .f = function(i){
   make.extract(vr = 'tasmax', yr = year[i])
 })
