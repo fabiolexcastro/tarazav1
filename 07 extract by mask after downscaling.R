@@ -17,6 +17,11 @@ year <- 1979:2014
 # Function to use ---------------------------------------------------------
 make.extract <- function(vr, yr){
   
+  vr <- 'tasmin'
+  yr <- 1979
+  
+  cat('... Processing: ', yr, '\n')
+  fles <- dir_ls(path, regexp = vr) %>% dir_ls(.) %>% as.character()
   
   
   
