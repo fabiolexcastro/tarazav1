@@ -17,8 +17,8 @@ year <- 1979:2014
 # Function to use ---------------------------------------------------------
 make.extract <- function(vr, yr){
   
-  vr <- 'tasmin'
-  yr <- 1979
+  # vr <- 'tasmin'
+  # yr <- 1979
   
   cat('... Processing: ', yr, '\n')
   fles <- dir_ls(path, regexp = vr) %>% dir_ls(., type = 'directory') %>% as.character()
@@ -37,14 +37,16 @@ make.extract <- function(vr, yr){
     file.remove(f)
   })
   
-  
-  
+  cat('-----Done-----\n')
   
 }
 
-# Extract by mask  --------------------------------------------------------
+# Extract by mask  --------------------------------------------------------#
 
-
+# Tasmax
+map(.x = 1:length(year), .f = function(i){
+  make.extract(vr = 'tasmax', yr = year[i])
+})
 
 
 
