@@ -31,6 +31,7 @@ make.extract <- function(vr, yr){
     r <- rast(f)
     z <- terra::crop(r, bsin)
     z <- terra::mask(z, bsin)
+    o <- paste0(dirname(f), '/', 'bsin_', basename(f))
     
   })
   
