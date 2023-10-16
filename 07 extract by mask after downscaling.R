@@ -60,7 +60,7 @@ map(.x = 1:length(year), .f = function(i){
 
 # Check 1979  -------------------------------------------------------------
 
-fles <- dir_ls('./tif/nasa/cmip6/historical/ACCESS-CM2/tasmX/1979', regexp = '.tif$')
+fles <- dir_ls('./tif/nasa/cmip6/historical/ACCESS-CM2/tasmax/1979', regexp = '.tif$')
 fles <- as.character(fles)
 fles <- grep('bsin', fles, value = TRUE)
 
