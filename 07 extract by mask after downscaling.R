@@ -75,6 +75,9 @@ for(i in 1:length(fles.bsin)){
 }
 
 # To extract by mask
+fles <- dir_ls('./tif/nasa/cmip6/historical/ACCESS-CM2/tasmax/1979', regexp = '.tif$')
+fles <- as.character(fles)
+
 fles <- grep('tasmax_', fles, value = T)
 fles <- fles[-grep('bsin', fles, value = F)]
 
