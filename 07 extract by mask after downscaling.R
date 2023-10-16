@@ -79,9 +79,16 @@ fles <- dir_ls('./tif/nasa/cmip6/historical/ACCESS-CM2/tasmax/1979', regexp = '.
 fles <- as.character(fles)
 fles <- grep('/tasmax_', fles, value = TRUE)
 
-fles <- grep('tasmax_', fles, value = T)
-fles <- fles[-grep('bsin', fles, value = F)]
-
+map(.x = 1:lenght(fles), .f = function(i){
+  
+  i <- 1 # Correr y borrar
+  
+  fle <- fles[i]
+  rst <- terra::rast(fle)
+  
+  
+  
+})
 
 
 
