@@ -81,16 +81,16 @@ fles <- grep('/tasmax_', fles, value = TRUE)
 
 map(.x = 1:lenght(fles), .f = function(i){
   
-  i <- 1 # Correr y borrar
-  
+  cat('To process: ', i, '\n')
   fle <- fles[i]
   rst <- terra::rast(fle)
   rst <- terra::crop(rst, bsin)
   rst <- terra::mask(rst, bsin)
   dir <- dirname(fle)
   nme <- basename(fle)
-  nme
-  
+  terra:writeRaster(x = rst, filename = glue('{dir}/bsin_{nme}'), overwrite = TRUE)
+  cat('Done!\n')
+  rm(rst, dir, nme)
   
 })
 
