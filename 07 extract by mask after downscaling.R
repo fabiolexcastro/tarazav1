@@ -79,9 +79,10 @@ fles <- dir_ls('./tif/nasa/cmip6/historical/ACCESS-CM2/tasmax/1979', regexp = '.
 fles <- as.character(fles)
 fles <- grep('/tasmax_', fles, value = TRUE)
 
-map(.x = 1:lenght(fles), .f = function(i){
+map(.x = 1:length(fles), .f = function(i){
   
   cat('To process: ', i, '\n')
+  library(terra)
   fle <- fles[i]
   rst <- terra::rast(fle)
   rst <- terra::crop(rst, bsin)
