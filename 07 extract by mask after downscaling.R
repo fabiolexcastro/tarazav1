@@ -111,12 +111,9 @@ for(i in 1:length(fles)){
   fle <- fles[i]
   dir <- dirname(fle)
   nme <- basename(fle)
-  
-  fle
-  
-  
-  
-  
+  nme <- gsub('bsin_bsin_', '', nme)
+  nme
+
   
 }
 
