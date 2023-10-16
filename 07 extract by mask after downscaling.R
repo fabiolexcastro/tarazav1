@@ -27,7 +27,7 @@ make.extract <- function(vr, yr){
   fles <- grep('.tif$', fles, value = T)
   fles <- grep(paste0('/', vr), fles, value = T)
   
-  map(.x = fles[2:length(fles)], .f = function(f){
+  map(.x = fles, .f = function(f){
     cat('Basename: ', basename(f), '\n')
     r <- rast(f)
     z <- terra::crop(r, bsin)
@@ -57,6 +57,14 @@ map(.x = 1:length(year), .f = function(i){
   make.extract(vr = 'tasmin', yr = year[i])
 })
 
+
+# Check 1979  -------------------------------------------------------------
+
+fles <- dir_ls('./tif/nasa/cmip6/historical/ACCESS-CM2/tasmX/1979', regexp = '.tif$')
+fles <- as.character(fles)
+fles <- grep('bsin', fles, value = TRUE)
+
+fles.bsin <- grep('bsin_bsin', fles, value = TRUE)
 
 
 
