@@ -87,6 +87,8 @@ map(.x = 1:lenght(fles), .f = function(i){
   rst <- terra::rast(fle)
   rst <- terra::crop(rst, bsin)
   rst <- terra::mask(rst, bsin)
+  dir <- dirname(fle)
+  dir
   
   
 })
