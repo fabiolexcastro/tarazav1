@@ -66,8 +66,13 @@ fles <- grep('bsin', fles, value = TRUE)
 
 grep('tasmax_1.tif', fles, value = T)
 
-fles.bsin <- grep('bsin_bsin', fles, value = TRUE)
 
+# To change the names
+fles.bsin <- grep('bsin_bsin', fles, value = TRUE)
+for(i in 1:length(fles.bsin)){
+  cat('To change the name: ', i, '\n')
+  file.remove(fles.bsin[i], gsub('bsin_bsin_', 'bsin_', fles.bsin[i]))
+}
 
 
 
