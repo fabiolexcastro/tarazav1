@@ -74,6 +74,14 @@ for(i in 1:length(fles.bsin)){
   file.remove(fles.bsin[i], gsub('bsin_bsin_', 'bsin_', fles.bsin[i]))
 }
 
+# To extract by mask
+fles <- grep('tasmax_', fles, value = T)
+fles
+
+
+
+
+
 
 
 
