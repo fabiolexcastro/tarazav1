@@ -76,7 +76,7 @@ for(i in 1:length(fles.bsin)){
 
 # To extract by mask
 fles <- grep('tasmax_', fles, value = T)
-fles
+fles <- fles[-grep('bsin', fles, value = F)]
 
 
 
