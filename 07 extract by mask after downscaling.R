@@ -103,6 +103,22 @@ fles <- grep('bsin_bsin', fles, value = TRUE)
 
 fles
 
+for(i in 1:length(fles)){
+  
+  i <- 1 # Correr y borrar 
+  
+  cat('Processing: ', i, '\n')
+  fle <- fles[i]
+  dir <- dirname(fle)
+  nme <- basename(fle)
+  
+  fle
+  
+  
+  
+  
+  
+}
 
 
 
