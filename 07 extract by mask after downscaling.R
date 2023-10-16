@@ -89,7 +89,7 @@ map(.x = 1:length(fles), .f = function(i){
   rst <- terra::mask(rst, bsin)
   dir <- dirname(fle)
   nme <- basename(fle)
-  terra:writeRaster(x = rst, filename = glue('{dir}/bsin_{nme}'), overwrite = TRUE)
+  terra::writeRaster(x = rst, filename = glue('{dir}/bsin_{nme}'), overwrite = TRUE)
   cat('Done!\n')
   rm(rst, dir, nme)
   
