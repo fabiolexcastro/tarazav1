@@ -114,6 +114,8 @@ for(i in 1:length(fles)){
   nme <- gsub('bsin_bsin_', '', nme)
   nme
 
+  file.copy(from = fle, to = glue('{dir}/bsin_{nme}'))
+  
   
 }
 
