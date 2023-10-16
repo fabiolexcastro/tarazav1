@@ -64,6 +64,8 @@ fles <- dir_ls('./tif/nasa/cmip6/historical/ACCESS-CM2/tasmax/1979', regexp = '.
 fles <- as.character(fles)
 fles <- grep('bsin', fles, value = TRUE)
 
+grep('tasmax_1.tif', fles, value = T)
+
 fles.bsin <- grep('bsin_bsin', fles, value = TRUE)
 
 
