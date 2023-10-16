@@ -97,7 +97,7 @@ map(.x = 1:length(fles), .f = function(i){
 
 # Now with tasmin ---------------------------------------------------------
 
-fles <- dir_ls('./tif/nasa/cmip6/historical/ACCESS-CM2/tasmax/1979', regexp = '.tif$')
+fles <- dir_ls('./tif/nasa/cmip6/historical/ACCESS-CM2/tasmin/1979', regexp = '.tif$')
 fles <- as.character(fles)
 fles <- grep('bsin_bsin', fles, value = TRUE)
 
