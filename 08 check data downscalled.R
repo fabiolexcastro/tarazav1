@@ -74,7 +74,19 @@ make.down <- function(dir, nms){
   lst.fls <- as.character(lst.fls)
   lst.fls <- grep('/t', lst.fls, value = T)
   lst.fls <- mixedsort(lst.fls)
-  grep(paste0(gsub('bsin_', '', nms), collapse = '|'), lst.fls, value = T)
+  lst.fls <- grep(paste0(gsub('bsin_', '', nms), collapse = '|'), lst.fls, value = T)
+  
+  i <- 1
+  
+  map(.x = 1:length(lst.fls), .f = function(i){
+    
+    cat('To process: ', i)
+    rst <- rast(lst.fls[i])
+    plot(rst[[1]])
+    
+  })
+  
+  
   
 }
 
