@@ -73,6 +73,8 @@ make.down <- function(dir, nms){
   lst.fls <- grep('.tif$', lst.fls, value = T)
   lst.fls <- as.character(lst.fls)
   lst.fls <- grep('/t', lst.fls, value = T)
+  lst.fls <- mixedsort(lst.fls)
+  grep(paste0(gsub('bsin_', '', nms), collapse = '|'), lst.fls, value = T)
   
 }
 
