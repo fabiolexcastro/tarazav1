@@ -36,7 +36,8 @@ count.files <- function(dir){
   map(.x = 1:length(fles), .f = function(x){
     
     fls <- dir_ls(fles[x], regexp = '.tif$')
-    fls
+    fls <- as.character(fls)
+    fls <- mixedsort(fls)
     
   })
   
