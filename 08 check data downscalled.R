@@ -51,7 +51,6 @@ count.files <- function(dir){
       dir.mss <- fls.bsn %>% dirname() %>% unique()
       
       
-      
     } else {
       print('Ok')
     }
@@ -66,10 +65,11 @@ count.files <- function(dir){
 
 make.down <- function(dir, nms){
   
-  dir <- 
+  dir <- dir.mss
+  nms <- mss
   
   cat('To process\n')
-  dir <- unique(dirname(files))
+  lst.fls <- dir_ls(dir)
   
   
 }
