@@ -10,6 +10,7 @@ options(scipen = 999, warn = -1)
 
 # Load data ---------------------------------------------------------------
 dirs <- dir_ls('./tif/nasa/cmip6/historical', type = 'directory')
+bsin <- vect('./gpkg/zone.gpkg')
 dirs
 
 dir <- dirs[1]
@@ -83,6 +84,7 @@ make.down <- function(dir, nms){
     cat('To process: ', i)
     rst <- rast(lst.fls[i])
     plot(rst[[1]])
+    plot(bsin, add = T)
     
   })
   
