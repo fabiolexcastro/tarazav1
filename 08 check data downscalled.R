@@ -46,9 +46,8 @@ count.files <- function(dir){
     if(lng.bsn != 365){
       
       rot <- basename(fls.bsn) %>% str_sub(., 1, 11)
-      rot
-      
-      setdiff(paste0('_', 1:365, '.tif$'))
+      rot <- unique(rot)
+      setdiff(paste0(rot, '_', 1:365, '.tif$'), basename(fls.bsn))
       
     } else {
       print('Ok')
