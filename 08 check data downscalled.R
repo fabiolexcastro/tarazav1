@@ -70,6 +70,7 @@ make.down <- function(dir, nms){
   
   cat('To process\n')
   lst.fls <- dir_ls(dir)
+  lst.fls <- grep('.tif$', lst.fls, value = T)
   
   
 }
