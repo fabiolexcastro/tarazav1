@@ -9,5 +9,5 @@ rm(list =ls())
 options(scipen = 999, warn = -1)
 
 # Load data ---------------------------------------------------------------
-
-
+dirs <- dir_ls('./tif/nasa/cmip6/historical')
+dirs
