@@ -39,6 +39,8 @@ count.files <- function(dir){
     fls <- as.character(fls)
     fls <- mixedsort(fls)
     frq <- tibble(folder = fles[x], nlng = length(fls))
+    fls.bsn <- grep('bsin', fls, value = T)
+    fls.bsn
     
     
   })
