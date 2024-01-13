@@ -19,7 +19,10 @@ count.files <- function(dir){
   
   cat('Processing ', dir, '\n')
   fles <- dir_ls(dir)
+  fles <- grep('tas', fles, value = T)
   fles <- map(fles, dir_ls, type = 'directory')
+  
+
   
   
   
