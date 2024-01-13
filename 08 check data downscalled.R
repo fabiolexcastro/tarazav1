@@ -27,6 +27,20 @@ count.files <- function(dir){
   lng.tmx <- length(grep('tasmax', fles, value = T))
   lng.tmn <- length(grep('tasmin', fles, value = T))
   
+  # Check 
+  print(lng.tmx == lng.tmn)
+  
+  # Now list inside each year (folder)
+  x <- 1 
+  
+  map(.x = 1:length(fles), .f = function(x){
+    
+    fls <- dir_ls(fles[x])
+    fls
+    
+  })
+  
+  
   
 }
 
