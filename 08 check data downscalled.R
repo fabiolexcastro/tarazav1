@@ -47,7 +47,10 @@ count.files <- function(dir){
       
       rot <- basename(fls.bsn) %>% str_sub(., 1, 11)
       rot <- unique(rot)
-      setdiff(paste0(rot, '_', 1:365, '.tif$'), basename(fls.bsn))
+      mss <- setdiff(paste0(rot, '_', 1:365, '.tif'), basename(fls.bsn))
+      
+      
+      
       
     } else {
       print('Ok')
@@ -57,6 +60,16 @@ count.files <- function(dir){
     
   })
   
+  
+  
+}
+
+make.down <- function(files){
+  
+  files <- mss
+  
+  cat('To process\n')
+  dir <- unique(dirname(files))
   
   
 }
