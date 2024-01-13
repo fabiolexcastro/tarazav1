@@ -24,7 +24,8 @@ count.files <- function(dir){
   fles <- unlist(fles)
   fles <- as.character(fles)
 
-  
+  lng.tmx <- length(grep('tasmax', fles, value = T))
+  lng.tmn <- length(grep('tasmin', fles, value = T))
   
   
 }
