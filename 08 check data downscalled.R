@@ -41,6 +41,19 @@ count.files <- function(dir){
     frq <- tibble(folder = fles[x], nlng = length(fls))
     fls.bsn <- grep('bsin', fls, value = T)
     fls.bsn
+    lng.bsn <- length(fls.bsn)
+    
+    if(lng.bsn != 365){
+      
+      rot <- basename(fls.bsn) %>% str_sub(., 1, 11)
+      rot
+      
+      setdiff(paste0('_', 1:365, '.tif$'))
+      
+    } else {
+      print('Ok')
+    }
+    
     
     
   })
