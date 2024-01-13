@@ -38,6 +38,8 @@ count.files <- function(dir){
     fls <- dir_ls(fles[x], regexp = '.tif$')
     fls <- as.character(fls)
     fls <- mixedsort(fls)
+    frq <- tibble(folder = fles[x], nlng = length(fls))
+    
     
   })
   
